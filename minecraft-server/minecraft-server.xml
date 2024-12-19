@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>itzg-minecraft-server</Name>
+  <Repository>itzg/minecraft-server</Repository>
+  <Registry>hub.docker.com/r/itzg/minecraft-server/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://github.com/itzg/docker-minecraft-server</Project>
+  <Overview>This docker image provides a Minecraft Server that will automatically download the latest stable version at startup. You can also run/upgrade to any specific version or the latest snapshot. It will also automatically download given modpacks.&#xD;
+&#xD;
+Every Variable you might want to change is added. For more information see the offical docs: hub.docker.com/r/itzg/minecraft-server/</Overview>
+  <Category>GameServers:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://djeqr6to3dedg.cloudfront.net/repo-logos/itzg/minecraft-server/live/logo-1704684813344.png</Icon>
+  <ExtraParams>--health-cmd='mc-health' --health-interval=5s --health-retries=20 --health-timeout=5s --health-start-period=1m</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1734644420</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Server Port TCP" Target="25565" Default="25565" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">25565</Config>
+  <Config Name="Server Port UDP" Target="25565" Default="25565" Mode="udp" Description="" Type="Port" Display="always" Required="false" Mask="false">25565</Config>
+  <Config Name="Server Files" Target="/data" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/minecraft/</Config>
+  <Config Name="Memory" Target="MEMORY" Default="1G" Mode="" Description="The image declares an initial and maximum Java memory-heap limit of 1 GB." Type="Variable" Display="always" Required="false" Mask="false">1G</Config>
+  <Config Name="Timezone" Target="TZ" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">Europe/Berlin</Config>
+  <Config Name="Server type" Target="TYPE" Default="VANILLA" Mode="" Description="Options:&#13;&#10;- VANILLA&#13;&#10;- AUTO_CURSEFORGE&#13;&#10;- FTBA&#13;&#10;- MODRINTH&#13;&#10;- BUKKIT&#13;&#10;- SPIGOT&#13;&#10;- CANYON&#13;&#10;- FABRIC&#13;&#10;- FORGE&#13;&#10;- MAGMA&#13;&#10;- MAGMA_MAINTAINED&#13;&#10;- KETTING&#13;&#10;- MOHIST&#13;&#10;- CATSERVER&#13;&#10;- SPONGEVANILLA&#13;&#10;- LIMBO&#13;&#10;- CRUCIBLE&#13;&#10;- PAPER&#13;&#10;- QUILT" Type="Variable" Display="always" Required="false" Mask="false">VANILLA</Config>
+  <Config Name="Minecraft Version" Target="VERSION" Default="LATEST" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">LATEST</Config>
+  <Config Name="Message of the Day" Target="MOTD" Default="A Minecraft Docker Server" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">A Minecraft Docker Server</Config>
+  <Config Name="Difficulty" Target="DIFFICULTY" Default="" Mode="" Description="Options:&#13;&#10;- peaceful&#13;&#10;- easy&#13;&#10;- normal&#13;&#10;- hard" Type="Variable" Display="always" Required="false" Mask="false">easy</Config>
+  <Config Name="Icon" Target="ICON" Default="" Mode="" Description="The url or file path for the icon image to use for the server. It will be downloaded, scaled, and converted to the proper format." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Override Icon" Target="OVERRIDE_ICON" Default="FALSE" Mode="" Description="The server icon which has been set doesn't get overridden by default. Set this to TRUE to override the icon" Type="Variable" Display="always" Required="false" Mask="false">FALSE</Config>
+  <Config Name="Hardcore Mode" Target="HARDCORE" Default="false" Mode="" Description="If set to true, players will be set to spectator mode if they die." Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="World Seed" Target="SEED" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Gamemode" Target="MODE" Default="" Mode="" Description="Minecraft servers are configured to run in Survival mode by default. You can change the mode using MODE where you can either provide the standard numerical values or the shortcut values:&#13;&#10;creative&#13;&#10;survival&#13;&#10;adventure&#13;&#10;spectator(minecraft 1.8 or later)" Type="Variable" Display="always" Required="false" Mask="false">survival</Config>
+  <Config Name="Server Name" Target="SERVER_NAME" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">A Docker Minecraft Server</Config>
+  <Config Name="Curseforge API Key" Target="CF_API_KEY" Default="" Mode="" Description="YOUR CurseForge (Eternal) API Key." Type="Variable" Display="always" Required="false" Mask="true"/>
+  <Config Name="Curseforge URL" Target="CF_PAGE_URL" Default="" Mode="" Description="Pass a page URL to the modpack or a specific file" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Curseforge Slug" Target="CF_SLUG" Default="" Mode="" Description="Instead of a URL, the modpack slug can be provided." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Curseforge Manual Downloads" Target="/downloads" Default="" Mode="rw" Description="For mod, modpacks, and world files that are not allowed for automated download, the container path /downloads can be attached and matching files will be retrieved from there. The subdirectories mods, modpacks, and worlds will also be checked accordingly." Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/minecraft/downloads/</Config>
+  <Config Name="Max Players" Target="MAX_PLAYERS" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">20</Config>
+  <Config Name="Accept EULA" Target="EULA" Default="TRUE" Mode="" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">TRUE</Config>
+  <Config Name="Snooper Enable" Target="SNOOPER_ENABLED" Default="true" Mode="" Description="If set to false, the server will not send data to snoop.minecraft.net server." Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
+  <Config Name="Spawn Protection" Target="SPAWN_PROTECTION" Default="" Mode="" Description="Sets the area that non-ops can not edit (0 to disable)" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="World Generation" Target="GENERATOR_SETTINGS" Default="" Mode="" Description="For some of the level types, GENERATOR_SETTINGS can be used to further customize the world generation as described here." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="World Type" Target="LEVEL_TYPE" Default="" Mode="" Description="By default, a standard world is generated with hills, valleys, water, etc. A different level type can be configured by setting LEVEL_TYPE to an expected type listed here." Type="Variable" Display="advanced" Required="false" Mask="false">minecraft:default</Config>
+  <Config Name="PVP Mode" Target="PVP" Default="" Mode="" Description="By default, servers are created with player-vs-player (PVP) mode enabled." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="Savegame" Target="LEVEL" Default="" Mode="" Description="You can either switch between world saves or run multiple containers with different saves by using the LEVEL option" Type="Variable" Display="advanced" Required="false" Mask="false">world</Config>
+  <Config Name="Server Console" Target="EXEC_DIRECTLY" Default="false" Mode="" Description="If you would like to docker attach to the Minecraft server console with color and interactive capabilities, then set to true" Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="Stop Announce Delay" Target="STOP_SERVER_ANNOUNCE_DELAY" Default="" Mode="" Description="To allow time for players to finish what they're doing during a graceful server shutdown, set STOP_SERVER_ANNOUNCE_DELAY to a number of seconds to delay after an announcement is posted by the server." Type="Variable" Display="advanced" Required="false" Mask="false">30</Config>
+  <Config Name="Fabric Launcher Version" Target="FABRIC_LAUNCHER_VERSION" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Fabric Loader Version" Target="FABRIC_LOADER_VERSION" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Forge Version" Target="FORGE_VERSION" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+</Container>
